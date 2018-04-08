@@ -1,3 +1,6 @@
 // src/reducers/index.js
+import guesses from './guesses'
 
-export default {} // empty for now!
+export default {
+  guesses
+} // empty for now!
