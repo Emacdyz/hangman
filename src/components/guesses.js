@@ -1,110 +1,118 @@
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import './guesses.css'
-import '../reducers/guesses'
+import {playerWord, chosenWord} from'../reducers/guesses'
 
 // import css
-const data = ["awkward", "banjo", "hammer", "croquet", "dwarves", "gypsy", "ivory", "jukebox", "kayak", "salad", "kiosk", "window", "duck", "paintball"]
 
-export class Guesses extends PureComponent {
+class Guesses extends PureComponent {
 
   constructor (props) {
     super();
 
-    this.chosenWord = data[Math.floor(Math.random()*data.length)];
+    console.log(chosenWord)
 
-    console.log(this.chosenWord)
-
-    this.playerWord = this.chosenWord.replace(/./g, "_");
-
-    console.log(this.playerWord)
+    console.log(playerWord)
 
     this.state = {
-      guesses: []
+      guesses: ''
     }
 
-    this.handleClick = this.handleClick.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   checkLetter(letter) {
-
-    let index = this.chosenWord.indexOf(this.letterTextInput.value);
-
-    if (index === -1) {
-
-      console.log('Wrong guess')
-
-      // letter is not in chosen word
-    } else { 
-
-      // letter is in chosen word
-
-      this.playerWord[index] = letter; //replace the _ by the letter
-
-      findIndexOfLetter(letter, index + 1);
-
-    }
-
-    function findIndexOfLetter(letter, start) {
-
-      if (start === undefined) {
-        start = 0;
-      }
-
-      return index = this.chosenWord.indexOf(letter);
-
-    }
-  };
-
-  handleClick () {
-    if (this.letterTextInput !== null) {
-      this.setState({
-        guesses: this.state.guesses.concat(this.letterTextInput.value)
-      });
-    }
+    this.props.dispatch({type:"GUESSED_LETTER", payload: this.state.guesses})
   }
 
+  handleChange(event) {
+    if (this.letterTextInput !== null) {
+   this.setState({guesses: event.target.value})
+  //  this.setState({
+      //guesses: this.state.guesses.concat(this.letterTextInput.value)
+      }
+    }
+
+  handleSubmit (event) {
+
+    this.checkLetter(this.state.guesses);
+    event.preventDefault();
+    }
 
   render (){
-    let letters = this.state.guesses.map(letter => {
-      return <li>{letter}</li>;
-    });
+    //let letters = this.state.guesses.map(function (letter) {
+      //return <li>{letter}</li>
+  //  });
+
   return (
 
     <div className="gameContainer">
       <div className="computer">
-      <h2> Guess the following word (you have 6 lifes): </h2>
-      <p> {this.playerWord} </p>
+        <h2> Guess the following word (you have 6 lifes): </h2>
+        <p> {playerWord} </p>
       </div>
       <div className="player-input">
-        <input type="text" placeholder="Make a guess" ref={(ref) => this.letterTextInput = ref} className="input-field" />
-        <button type="button" className="input-button" onClick={this.handleClick}>Submit</button>
+      <form onSubmit={this.handleSubmit}>
+         <h2>Make a guess: </h2>
+          <select  value={this.state.guesses} onChange={this.handleChange}>
+           <option value="a">A</option>
+           <option value="b">B</option>
+           <option value="c">C</option>
+           <option value="d">D</option>
+           <option value="e">E</option>
+           <option value="f">F</option>
+           <option value="g">G</option>
+           <option value="h">H</option>
+           <option value="i">I</option>
+           <option value="j">J</option>
+           <option value="k">K</option>
+           <option value="l">L</option>
+           <option value="m">M</option>
+           <option value="n">N</option>
+           <option value="o">O</option>
+           <option value="p">P</option>
+           <option value="q">Q</option>
+           <option value="r">R</option>
+           <option value="s">S</option>
+           <option value="t">T</option>
+           <option value="u">U</option>
+           <option value="v">V</option>
+           <option value="w">W</option>
+           <option value="x">X</option>
+           <option value="y">Y</option>
+           <option value="z">Z</option>
+         </select>
+       <input type="submit" value="Submit" />
+     </form>
       </div>
 
-      <div className="show-guesses">
-        <ol>
-          {letters}
-        </ol>
-      </div>
     </div>
-)
-
-    // <GuessCount count={this.state.guesses.length} /)
+    )
   }
 
 }
 
 const mapStateToProps = (state) => {
   return {
-    guesses: state.guesses
-  }
-};
-
-const  mapDispatchToProps = dispatch => {
-  return {
-    guesses : (letter) => dispatch({type: 'GUESSED_LETTER', payload: 'letter' })
+    playerWord: state.playerWord
   }
 }
 
+export default connect(mapStateToProps) (Guesses)
 
-export default connect(mapStateToProps, mapDispatchToProps) (Guesses)
+//checkLetter(letter) {
+
+//  let index = this.chosenWord.indexOf(this.letterTextInput.value);
+
+//  if (index === -1) {
+
+  //  console.log('Wrong guess')
+
+    // letter is not in chosen word
+//  } else { 
+
+    // letter is in chosen word
+
+
+//  };

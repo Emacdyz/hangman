@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Guesses from './components/guesses'
+import Guesses from './components/guesses';
 import './App.css';
 
 class App extends Component {
