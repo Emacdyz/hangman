@@ -1,29 +1,23 @@
+//src/reducers/guesses.js
 import { GUESSED_LETTER } from '../actions/guessedLetter'
+import {wordToGuess} from '../data'
 
-const data = ["awkward", "banjo", "hammer", "croquet", "dwarves", "gypsy", "ivory", "jukebox", "kayak", "salad", "kiosk", "window", "duck", "paintball"]
-export const chosenWord = data[Math.floor(Math.random()*data.length)];
-export const playerWord = chosenWord.replace(/./g, "_");
-let makeAguess = [];
-let index;
+const initialState = wordToGuess.map(function(l){return '_'})
+let guessesSoFar = []
 
-const initialState = playerWord;
-
-const guesses = (state = initialState, { type, payload } = {}) => {
+export default (state = initialState, {type, payload}) => {
   switch (type) {
-    case GUESSED_LETTER :
+    case GUESSED_LETTER:
 
-      makeAguess = makeAguess.concat(payload);
+      guessesSoFar = guessesSoFar.concat(payload)
 
-        if (playerWord.includes(makeAguess)) {
-          window.alert(`Nice guess! It is on position ${playerWord.indexOf(payload)}`)
-        }
-
-        else {window.alert('Wrong guess')}
-
+      return  wordToGuess.map((letter) => {
+        if (guessesSoFar.includes(letter)) return letter
+        else return '_'
+      })
 
     default :
       return state
   }
 }
 
-export default guesses

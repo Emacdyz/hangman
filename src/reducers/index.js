@@ -2,5 +2,5 @@
 import guesses from './guesses'
 
 export default {
-  guesses
-} // empty for now!
+  guesses,
+} 
