@@ -4,6 +4,5 @@ export const chosenWord = data[Math.floor(Math.random()*data.length)];
 
 export const wordToGuess = Array.from(chosenWord);
 
-// export const playerWord = Array.from(chosenWord.replace(/./g, "_"));
 
 

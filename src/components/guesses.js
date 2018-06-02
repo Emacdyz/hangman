@@ -19,14 +19,16 @@ class Guesses extends PureComponent {
   }
 
   render (){
+    const {guesses} = this.props
 
     return (
 
       <div className="gameContainer">
         <div className="computer">
           <h2> Guess the following word (you have 6 lifes): </h2>
-          <p> {this.props.guesses.map(function(letter){return letter + " "})} </p>
+          <p> {guesses} </p>
         </div>
+
         <div className="player-input">
         <form onSubmit={this.handleSubmit}>
           <h2>Make a guess: </h2>
