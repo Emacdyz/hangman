@@ -61,11 +61,19 @@ class Guesses extends PureComponent {
           <Lives/>
         </div>
         </div>
-        
-
       </div>
     )
   }
+
+  // render() {
+  //   const {guesses} = this.props
+
+  //   if (!guesses.includes('_')) return <p>Congrats you won!</p>
+  //   else return <p> Game over!</p>
+    
+  // }
+
+  
 
 }
 
