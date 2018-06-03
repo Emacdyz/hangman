@@ -6,11 +6,13 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="main">
 
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Hangman Game!</h1>
+        <header>
+          <h1>Welcome to Hangman Game!</h1>
         </header>
+
+
         <Guesses/>
 
       </div>
