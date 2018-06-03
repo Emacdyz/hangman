@@ -65,7 +65,9 @@ class Guesses extends PureComponent {
         <input type="submit" value="Submit" />
       </form>
         </div>
+        
         <Lives/>
+        
 
       </div>
     )

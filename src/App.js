@@ -10,7 +10,6 @@ class App extends Component {
 
         <header className="App-header">
           <h1 className="App-title">Welcome to Hangman Game!</h1>
-          <img src='../hangman.png' className="App-logo" alt="logo" />
         </header>
         <Guesses/>
 
