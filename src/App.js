@@ -7,14 +7,7 @@ class App extends Component {
   render() {
     return (
       <div className="main">
-
-        <header>
-          <h1>Welcome to Hangman Game!</h1>
-        </header>
-
-
         <Guesses/>
-
       </div>
     );
   }

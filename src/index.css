@@ -3,16 +3,17 @@ body {
   padding: 0;
   font-family: Avenir, Helvetica, sans-serif;
   font-size: 16px;
+  color: rgb(18, 45, 86);
 }
 h1 {
-  font-size: 1.5em;
+  font-size: 1.8em;
   letter-spacing: 2px;
 }
 h2 {
   font-size: 1.3em;
 }
 p {
-  font-size: 1.8em;
+  font-size: 1.6em;
   letter-spacing: 5px;
 }
 img {
