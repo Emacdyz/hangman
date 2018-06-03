@@ -1,6 +1,8 @@
+//src/components/guesses.js
 import React, {PureComponent} from 'react'
 import {connect} from 'react-redux'
 import {letterguessed} from '../actions/guessedLetter'
+import Lives from './lives'
 import './guesses.css'
 
 class Guesses extends PureComponent {
@@ -19,13 +21,13 @@ class Guesses extends PureComponent {
   }
 
   render (){
-    const {guesses} = this.props
+    const {guesses, lives} = this.props
 
     return (
 
       <div className="gameContainer">
         <div className="computer">
-          <h2> Guess the following word (you have 6 lifes): </h2>
+          <h2> Guesses left: {lives} </h2>
           <p> {guesses} </p>
         </div>
 
@@ -63,6 +65,7 @@ class Guesses extends PureComponent {
         <input type="submit" value="Submit" />
       </form>
         </div>
+        <Lives/>
 
       </div>
     )
@@ -71,7 +74,8 @@ class Guesses extends PureComponent {
 }
 
 const mapStateToProps = (state) => ({
-  guesses: state.guesses
+  guesses: state.guesses,
+  lives: state.lives
 })
 
 export default connect(mapStateToProps, {letterguessed}) (Guesses)
