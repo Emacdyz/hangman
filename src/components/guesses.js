@@ -67,7 +67,7 @@ class Guesses extends PureComponent {
       </div>
     )
   }
-
+  
 }
 
 const mapStateToProps = (state) => ({
