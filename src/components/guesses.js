@@ -9,7 +9,21 @@ class Guesses extends PureComponent {
 
   handleClick = (event) => {
     event.preventDefault();
-    this.props.letterguessed(event.target.value)
+    this.props.letterguessed(event.target.value);
+  }
+
+  // checkWinner = () => {
+  //   const {guesses} = this.props
+
+  //   if (!guesses.includes('_')) {
+  //     console.log('you won');
+  //   return <h1> You won! </h1> }
+    
+
+  // } 
+
+  handleReset = () => {
+    window.location.reload()
   }
 
   render (){
@@ -19,13 +33,11 @@ class Guesses extends PureComponent {
 
       <div className="game-container">
         <div className="header">
-          <h1>Hang that guy!</h1>
+          <h1>Hangman</h1>
           <p> {guesses} </p>
         </div>
         <div className="player-input">
         <div className="keyboard">
-          
-          <h2> Make a guess: </h2>
 
           <button value="a" onClick={this.handleClick}>A</button>
           <button value="b" onClick={this.handleClick}>B</button>
@@ -61,19 +73,10 @@ class Guesses extends PureComponent {
           <Lives/>
         </div>
         </div>
+        <button className="new-game" onClick={this.handleReset}> Play Again </button>
       </div>
     )
   }
-
-  // render() {
-  //   const {guesses} = this.props
-
-  //   if (!guesses.includes('_')) return <p>Congrats you won!</p>
-  //   else return <p> Game over!</p>
-    
-  // }
-
-  
 
 }
 

@@ -1,4 +1,4 @@
-
+//src/actions/guessedLetter
 export const GUESSED_LETTER = 'GUESSED_LETTER'
 
 export const letterguessed = letter => ({

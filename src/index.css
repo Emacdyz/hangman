@@ -19,4 +19,5 @@ p {
 img {
   width: 200px;
   height: 300px;
+  border: 1px dotted rgb(18, 45, 86);
 }

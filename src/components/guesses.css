@@ -10,6 +10,7 @@
 .player-input {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
   justify-content: space-between;
   margin: 4%;
 }
@@ -17,20 +18,29 @@
   width: 50%;
   text-align: center;
 }
-.keyboard h2 {
-  padding-bottom: 4%
-}
+
 .keyboard button {
   margin: 5px;
   font-size: 1.2em;
   background: none;
   border-radius: 50%;
-  padding: 10px 15px
+  padding: 10px 15px;
 }
 .keyboard button:hover {
   background: rgb(18, 45, 86);
   color: #fff;
 }
+.new-game {
+  display: block;
+  padding: 5px 0;
+  margin: 10px auto;
+  border-radius: 10px;
+  font-size: 1em;
+  background: none;
+  width: 30%;
+  
+}
+
 
 
 

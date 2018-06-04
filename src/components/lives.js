@@ -8,7 +8,7 @@ class Lives extends PureComponent  {
          
         const {lives} = this.props
 
-        if (lives === 8) return null
+        if (lives === 8) return <img src='../hangman/0.png' alt="7 lives left"/>
         else if (lives === 7) return <img src='../hangman/1.png' alt="7 lives left"/>
         else if (lives === 6) return <img src='../hangman/2.png' alt="6 lives left"/>
         else if (lives === 5) return <img src='../hangman/3.png' alt="5 lives left"/>
