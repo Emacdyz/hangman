@@ -12,16 +12,6 @@ class Guesses extends PureComponent {
     this.props.letterguessed(event.target.value);
   }
 
-  // checkWinner = () => {
-  //   const {guesses} = this.props
-
-  //   if (!guesses.includes('_')) {
-  //     console.log('you won');
-  //   return <h1> You won! </h1> }
-    
-
-  // } 
-
   handleReset = () => {
     window.location.reload()
   }
