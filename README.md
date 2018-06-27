@@ -2,7 +2,7 @@
 
 Hangman game build with React/Redux - no back-end. 
 
-![alt text](https://github.com/Emacdyz/PizzaConfigurator/blob/master/public/Visu.png)
+![alt text](https://github.com/Emacdyz/hangman/public/AppDisplay.png)
 
 ## Getting Started 🚀
 * Clone this repo
