@@ -5,6 +5,9 @@ body, button {
   font-size: 16px;
   color: rgb(18, 45, 86);
 }
+button:focus {
+  outline: 0;
+}
 h1 {
   font-size: 1.8em;
   letter-spacing: 2px;
