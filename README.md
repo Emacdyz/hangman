@@ -1,6 +1,6 @@
 # Hangman
 
-### 🔷 In Progress! (This project is under construction and will work fully in a few days)
+Hangman game build with React/Redux - no back-end. 
 
 ## Getting Started 🚀
 * Clone this repo
